@@ -1,2 +1,46 @@
-test2
+//reorganize later: photoshop 
+
+1. Intro
+Period: 2
+Group members: Keith Hah, Caden Khuu
+Group name: undecided
+Project title: undecided
+
+2. Description
+General description:
+We are planning on creating a photoshop function
+where you can modify an image by cropping it, changing its
+saturation and contrast, sharpening it, blurring it, drawing 
+on it, or rotating it.
+
+Functionalities:
+-Crop: cuts off certain parts of an image, depending on what your input is
+-Contrast: 
+-Saturation:  
+-Sharpen: 
+-Blur:  
+-Draw 
+-Rotate
+
+Libraries:
+-
+
+Additional:
+-
+
+3. UML Diagram
+
+
+4. How it works
+
+
+5. Functionalities/Issues
+-
+
+//FINAL VERSION
+
+6. Log
+Keith:
+
+Caden:
 
