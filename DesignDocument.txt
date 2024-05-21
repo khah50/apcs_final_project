@@ -11,7 +11,7 @@ General description:
 We are planning on creating a photoshop function
 where you can modify an image by cropping it, changing its
 saturation and contrast, sharpening it, blurring it, drawing 
-on it, or rotating it.
+on it, or rotating it. We will also be implementing multiple filters using kernel images.
 
 Functionalities:
 -Crop: cuts off certain parts of an image, depending on what your input values are
