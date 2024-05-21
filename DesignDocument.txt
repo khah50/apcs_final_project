@@ -3,8 +3,8 @@
 1. Intro
 Period: 2
 Group members: Keith Hah, Caden Khuu
-Group name: undecided
-Project title: undecided
+Group name: The Photo Shoppers
+Project title: The Photo Shopper
 
 2. Description
 General description:
@@ -14,16 +14,15 @@ saturation and contrast, sharpening it, blurring it, drawing
 on it, or rotating it.
 
 Functionalities:
--Crop: cuts off certain parts of an image, depending on what your input is
--Contrast: 
--Saturation:  
--Sharpen: 
--Blur:  
--Draw 
--Rotate
+-Crop: cuts off certain parts of an image, depending on what your input values are
+-Contrast: changes the sharpness of image
+-Saturation: changes the intensity of the image's color
+-Blur: blurs the image, which decreases its overall quality
+-Draw: use your mouse to draw on the image (different colors/thickness)
+-Rotate: rotates the image (ideally by intervals of 90 degrees)
 
 Libraries:
--
+N/A
 
 Additional:
 -
@@ -32,7 +31,8 @@ Additional:
 
 
 4. How it works
-
+In order to use our project, the user has to use the mouse and keyboard to
+change certain aspects of the image (ex: pressing R rotates the image)
 
 5. Functionalities/Issues
 -
