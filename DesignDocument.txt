@@ -23,8 +23,8 @@ Functionalities:
 -Invert: Flips images
 
 Libraries:
-N/A
-
+Some kind of GUI library (G4P?) so the user can input the name of their image.
+(http://www.lagers.org.uk/g4p/)
 Additional:
 -Add texts to show user what editing mode they're using
 
