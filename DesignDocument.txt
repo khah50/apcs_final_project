@@ -4,7 +4,7 @@
 Period: 2
 Group members: Keith Hah, Caden Khuu
 Group name: The Photo Shoppers
-Project title: The Photo Shopper
+Project title: Pixeditor
 
 2. Description
 General description:
@@ -20,24 +20,27 @@ Functionalities:
 -Blur: blurs the image, which decreases its overall quality
 -Draw: use your mouse to draw on the image (different colors/thickness)
 -Rotate: rotates the image (ideally by intervals of 90 degrees)
+-Sizing: Makes picture bigger or smaller
 
 Libraries:
 N/A
 
 Additional:
--
+-Add texts to describe what editing mode you're using
 
 3. UML Diagram
-
+https://lucid.app/lucidchart/cff33ecc-ce74-4e9f-baf9-85041de0d91a/edit?viewport_loc=-151%2C-349%2C2138%2C1890%2CHWEp-vi-RSFO&invitationId=inv_b2917630-d718-495f-9713-030cdf0c15a1
 
 4. How it works
 In order to use our project, the user has to use the mouse and keyboard to
-change certain aspects of the image (ex: pressing R rotates the image)
+change certain aspects of the image (ex: pressing R rotates the image, clicking the mouse to draw)
+
+//MEETINGS 1 AND 2 - NOT YET
 
 5. Functionalities/Issues
--
 
-//FINAL VERSION
+
+//FINAL VERSION - NOT YET
 
 6. Log
 Keith:
