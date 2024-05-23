@@ -1,43 +1,49 @@
-//reorganize later: photoshop 
-
 1. Intro
 Period: 2
 Group members: Keith Hah, Caden Khuu
 Group name: The Photo Shoppers
-Project title: Pixeditor
+Project title: Pixedit
 
 2. Description
 General description:
 We are planning on creating a photoshop function
 where you can modify an image by cropping it, changing its
 saturation and contrast, sharpening it, blurring it, drawing 
-on it, or rotating it. We will also be implementing multiple filters using kernel images.
+on it, rotating it, and increasing or decreasing its size. We will
+be implementing multiple filters using kernel images.
 
 Functionalities:
--Crop: cuts off certain parts of an image, depending on what your input values are
+-Crop: cuts off certain parts of an image, depending on what your input values are. The image will be smaller.
 -Contrast: changes the sharpness of image
 -Saturation: changes the intensity of the image's color
 -Blur: blurs the image, which decreases its overall quality
 -Draw: use your mouse to draw on the image (different colors/thickness)
 -Rotate: rotates the image (ideally by intervals of 90 degrees)
--Sizing: Makes picture bigger or smaller
+-Sizing: Makes picture bigger or smaller (just change the size of the image).
+-Invert: Flips images
 
 Libraries:
 N/A
 
 Additional:
--Add texts to describe what editing mode you're using
+-Add texts to show user what editing mode they're using
 
 3. UML Diagram
-https://lucid.app/lucidchart/cff33ecc-ce74-4e9f-baf9-85041de0d91a/edit?viewport_loc=-151%2C-349%2C2138%2C1890%2CHWEp-vi-RSFO&invitationId=inv_b2917630-d718-495f-9713-030cdf0c15a1
+https://drive.google.com/file/d/1NNk9OP7XZ-vjJQb10fRLtz8hoqdzdSVM/view?usp=sharing
 
 4. How it works
 In order to use our project, the user has to use the mouse and keyboard to
-change certain aspects of the image (ex: pressing R rotates the image, clicking the mouse to draw)
+change certain aspects of the image (ex: pressing R rotates the image, clicking the mouse to draw).
+They may also run the code with differnet parameters to change certain aspects of the image (such as its size).
+
+
+
+
 
 //MEETINGS 1 AND 2 - NOT YET
 
 5. Functionalities/Issues
+
 
 
 //FINAL VERSION - NOT YET
