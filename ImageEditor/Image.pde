@@ -14,10 +14,13 @@ void fileSelect(File selection){
     System.out.println("User selected " + selection.getAbsolutePath());
     imagePath = selection.getAbsolutePath();
     image = loadImage(imagePath);
+    if(image == null){
+      System.out.println("Image failed to load");
+    }
   }
 }
 void setup(){
-  size(1370,800);
+  size(1470,1000);
   selectInput("Choose an image to edit:", "fileSelect");
   slider = new GCustomSlider(this, 50, 50, 400, 100, "grey_blue");
   slider.setShowValue(true);
@@ -29,9 +32,11 @@ void setup(){
   slider.setNumberFormat(G4P.INTEGER, 0);
   slider.setOpaque(true);
   background(200,200,220);
-  image = loadImage(imagePath);
-  image(image,0,0);
 }
 void draw(){
-
+  background(200,200,220);
+  if(image != null){
+    image.resize(300,300);
+    image(image,600,300);  
+  }
 }
