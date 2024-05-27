@@ -24,9 +24,11 @@ Functionalities:
 
 Libraries:
 Some kind of GUI library (G4P?) so the user can input the name of their image.
-(http://www.lagers.org.uk/g4p/)
+(http://www.lagers.org.uk/g4p/). We also need this to properly edit the image using things like sliders.
+
 Additional:
 -Add texts to show user what editing mode they're using
+-(Maybe not necesasry) Provide sample images if user doesn't want to use their own images.
 
 3. UML Diagram
 https://drive.google.com/file/d/1NNk9OP7XZ-vjJQb10fRLtz8hoqdzdSVM/view?usp=sharing
