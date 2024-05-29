@@ -46,7 +46,17 @@ They may also run the code with differnet parameters to change certain aspects o
 
 5. Functionalities/Issues
 
+Current functionalities:
+-Resize image function with functional sliders.
+-Draw function with variable color and size.
 
+Planned functionalities:
+-Image filters using kernels.
+-Crop function using built in functions to get part of the image.
+-Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...).
+-Export image function.
+
+We orignally had issues with libraries as we are using a GUI library called G4P, where we were unable to take values from a slider input. However, after looking over the documentation and the built in functions, we were able to figure it out. We are now using multiple GUI libraries to take user input.
 
 //FINAL VERSION - NOT YET
 
