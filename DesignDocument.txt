@@ -1,1 +1,67 @@
-sdlkjnfkds
+1. Intro
+Period: 2
+Group members: Keith Hah, Caden Khuu
+Group name: The Photo Shoppers
+Project title: Pixedit
+
+2. Description
+General description:
+We are planning on creating a photoshop function
+where you can modify an image by cropping it, changing its
+saturation and contrast, sharpening it, blurring it, drawing 
+on it, rotating it, and increasing or decreasing its size. We will
+be implementing multiple filters using kernel images.
+
+Functionalities:
+-Crop: cuts off certain parts of an image, depending on what your input values are. The image will be smaller.
+-Contrast: changes the sharpness of image
+-Saturation: changes the intensity of the image's color
+-Blur: blurs the image, which decreases its overall quality
+-Draw: use your mouse to draw on the image (different colors/thickness)
+-Rotate: rotates the image (ideally by intervals of 90 degrees)
+-Sizing: Makes picture bigger or smaller (just change the size of the image).
+-Invert: Flips images
+
+Libraries:
+Some kind of GUI library (G4P?) so the user can input the name of their image.
+(http://www.lagers.org.uk/g4p/). We also need this to properly edit the image using things like sliders.
+
+Additional:
+-Add texts to show user what editing mode they're using
+-(Maybe not necesasry) Provide sample images if user doesn't want to use their own images.
+
+3. UML Diagram
+https://drive.google.com/file/d/1NNk9OP7XZ-vjJQb10fRLtz8hoqdzdSVM/view?usp=sharing
+
+4. How it works
+In order to use our project, the user has to use the mouse and keyboard to
+change certain aspects of the image (ex: pressing R rotates the image, clicking the mouse to draw).
+They may also run the code with differnet parameters to change certain aspects of the image (such as its size).
+
+
+
+
+
+//MEETINGS 1 AND 2 - NOT YET
+
+5. Functionalities/Issues
+
+Current functionalities:
+-Resize image function with functional sliders.
+-Draw function with variable color and size.
+
+Planned functionalities:
+-Image filters using kernels.
+-Crop function using built in functions to get part of the image.
+-Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...).
+-Export image function.
+
+We orignally had issues with libraries as we are using a GUI library called G4P, where we were unable to take values from a slider input. However, after looking over the documentation and the built in functions, we were able to figure it out. We are now using multiple GUI libraries to take user input.
+
+//FINAL VERSION - NOT YET
+
+6. Log
+Keith:
+
+Caden:
+

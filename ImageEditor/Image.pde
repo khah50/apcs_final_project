@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+public int currentKernel;
+public class Kernel {
+  float[][]kernel;
+  
+  public int getCurrentKernel(){
+    return currentKernel;  
+  }
+  
+  public Kernel(float[][]init) {
+    kernel = init;
+  } 
+}
+
+void invert(){
+  
+}
+=======
 PImage img;
 PImage output;
 import g4p_controls.*;
@@ -112,3 +130,4 @@ void crop() {
     image(crop, 0, 0);
 }
 }
+>>>>>>> d4d8f7892946b8ca3b14c723b455706206c8b16a
