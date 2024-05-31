@@ -1,21 +1,3 @@
-<<<<<<< main
-public int currentKernel;
-public class Kernel {
-  float[][]kernel;
-  
-   public int getCurrentKernel(){
-    return currentKernel;  
-  }
-  
-  public Kernel(float[][]init) {
-    kernel = init;
-  }
-  
-}
-
-void invert(){
-  
-=======
 PImage img;
 PImage output;
 import g4p_controls.*;
@@ -129,5 +111,4 @@ void crop() {
     PImage crop = img.get(0,0,500,500);
     image(crop, 0, 0);
 }
->>>>>>> cadenkhuu
 }
