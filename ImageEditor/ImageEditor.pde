@@ -87,11 +87,13 @@ void setup() {
   sliderImageY.setEasing(6.0);
   sliderImageY.setNumberFormat(G4P.INTEGER, 0);
   sliderImageY.setOpaque(false);
+   
+
 }
 
 void draw() {
   background(200, 200, 220);
-  if (image != null) {
+  if (image != null){
     imageMode(CENTER);
     image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
   }
