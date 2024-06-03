@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-public int currentKernel;
-public class Kernel {
-  float[][]kernel;
-  
-  public int getCurrentKernel(){
-    return currentKernel;  
-  }
-  
-  public Kernel(float[][]init) {
-    kernel = init;
-  } 
-}
-
-void invert(){
-  
-}
-=======
 PImage img;
 PImage output;
 import g4p_controls.*;
@@ -31,6 +13,7 @@ void setup(){
   output = img.copy();
     image(img, 0, 0);
 stroke(255);
+  flip();
 
   curr = 0;
   
@@ -99,22 +82,35 @@ stroke(255);
   
   crop();
    GButton btn = new GButton(this, 100, 90, 96, 32, "A button");
+   
+
 }
 
+
+void kern() {
+   kernels[curr].apply(img, output);
+image(img, 0, 0);
+image(output, img.width, 0);
+text(names[name], width / 2 + 20, 50);
+
+}
+ 
+
 void draw() {
+    drawl();
+
   if(keyPressed) {
   for(int i = 0; i <= 7; i++) {
     if(key == str(i).charAt(0)) {
+            kern();
+
       curr = i;
       name = i;
       break;
     }
   }
+
 }
-kernels[curr].apply(img, output);
-image(img, 0, 0);
-image(output, img.width, 0);
-text(names[name], width / 2 + 20, 50);
 
 }
 
@@ -130,4 +126,11 @@ void crop() {
     image(crop, 0, 0);
 }
 }
->>>>>>> d4d8f7892946b8ca3b14c723b455706206c8b16a
+
+void flip () {
+    image(img, 0, 0);
+    pushMatrix();
+    scale(-1.0, 1.0);
+    image(img, -img.width, 0);
+    popMatrix();
+}
