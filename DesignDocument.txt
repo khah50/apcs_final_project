@@ -9,7 +9,7 @@ General description:
 We are planning on creating a photoshop function
 where you can modify an image by cropping it, changing its
 saturation and contrast, sharpening it, blurring it, drawing 
-on it, rotating it, and increasing or decreasing its size. We will
+on it, rotating it, inverting it, and increasing or decreasing its size. We will also
 be implementing multiple filters using kernel images.
 
 Functionalities:
@@ -28,6 +28,7 @@ Some kind of GUI library (G4P?) so the user can input the name of their image.
 
 Additional:
 -Add texts to show user what editing mode they're using
+-Get user inputted image
 -(Maybe not necesasry) Provide sample images if user doesn't want to use their own images.
 
 3. UML Diagram
@@ -38,28 +39,25 @@ In order to use our project, the user has to use the mouse and keyboard to
 change certain aspects of the image (ex: pressing R rotates the image, clicking the mouse to draw).
 They may also run the code with differnet parameters to change certain aspects of the image (such as its size).
 
-
-
-
-
-//MEETINGS 1 AND 2 - NOT YET
-
 5. Functionalities/Issues
 
 Current functionalities:
+-Takes in user inputted images
 -Resize image function with functional sliders.
 -Draw function with variable color and size.
 -Image filters using kernels.
+-Displays current editing mode
 
 Planned functionalities:
 -Crop function using built in functions to get part of the image.
 -Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...).
--Export image function.
 -Interface where the user can select which tool to use and the properties for each tool using G4P library.
 -Multiple blur filters (Gaussian, radial, shape blur).
--Overlay images.
+-Invert image
+-Rotate image
 
-We orignally had issues with libraries as we are using a GUI library called G4P, where we were unable to take values from a slider input. However, after looking over the documentation and the built in functions, we were able to figure it out. We are now using multiple GUI libraries to take user input.
+Issues:
+Sometimes getting a null pointer error. Also, we orignally had issues with libraries as we are using G4P, where we were unable to take values from a slider input. However, after looking over the documentation and the built in functions, we were able to figure it out. We are now using multiple G4P tools in order to adjust the usage of our editing tools.
 
 //FINAL VERSION - NOT YET
 
