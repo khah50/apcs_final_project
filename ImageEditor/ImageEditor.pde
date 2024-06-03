@@ -2,8 +2,14 @@ import g4p_controls.*;
 PImage image;
 String imagePath;
 String mode = "Choose a mode";
+PImage img;
+PImage output;
+int curr;
+String[] names;
+Kernel[] kernels;
+int name;
 
-GCustomSlider sliderImageX, sliderImageY;
+GCustomSlider sliderImageX, sliderImageY, slider;
 
 public void handleSliderEvents(GValueControl slider, GEvent event) {
   System.out.println("slider event");
@@ -12,7 +18,8 @@ public void handleSliderEvents(GValueControl slider, GEvent event) {
 void fileSelect(File selection) {
   if (selection == null) {
     System.out.println("No image selected");
-  } else {
+  } 
+  else{
     System.out.println("User selected " + selection.getAbsolutePath());
     imagePath = selection.getAbsolutePath();
     image = loadImage(imagePath);
@@ -40,7 +47,7 @@ void keyPressed() {
     if (keyCode == 66) { //blur B
          mode = "Mode: Blur";
     }
-    if (keyCode == 100) { //draw D
+    if (keyCode == 68) { //draw D
          mode = "Mode: Draw";
     }
     if (keyCode == 82) { //rotate R
@@ -60,12 +67,14 @@ void keyPressed() {
     }
     if (keyCode == BACKSPACE) { //quit modes
       mode = "Mode: None";
-    }
+    }  
+   
   }
 }
 
 void setup() {
   size(1300, 900);
+  stroke(255);  
   background(200, 200, 220);
   selectInput("Choose an image to edit:", "fileSelect");
   sliderImageX = new GCustomSlider(this, 250, 50, 400, 100, "grey_blue");
@@ -87,12 +96,27 @@ void setup() {
   sliderImageY.setEasing(6.0);
   sliderImageY.setNumberFormat(G4P.INTEGER, 0);
   sliderImageY.setOpaque(false);
-   
 
+  slider = new GCustomSlider(this, 700, 700, 400, 100, "grey_blue");
+  slider.setShowValue(true);
+  slider.setShowLimits(true);
+  slider.setLimits(38, 0, 100);
+  slider.setNbrTicks(11);
+  slider.setShowTicks(true);
+  slider.setEasing(6.0);
+  slider.setNumberFormat(G4P.INTEGER, 0);
+  slider.setOpaque(true);
+ 
+  GButton btn = new GButton(this, 100, 90, 96, 32, "A button");
 }
 
 void draw() {
   background(200, 200, 220);
+  if(mode == "Mode: Draw"){
+    if(mousePressed){
+        circle(mouseX, mouseY, slider.getValueI());
+    }
+  }
   if (image != null){
     imageMode(CENTER);
     image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
