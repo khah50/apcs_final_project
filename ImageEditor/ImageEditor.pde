@@ -1,7 +1,9 @@
 import g4p_controls.*;
 PImage image;
+PImage sampleImg;
 String imagePath;
 String mode = "Choose a mode";
+String imageFailMessage = "No image selected";
 String[] names;
 Kernel[] kernels;
 
@@ -9,7 +11,6 @@ GCustomSlider sliderImageX, sliderImageY, sliderDraw;
 
 void setup() {
   size(1300, 900);
-  stroke(255);  
   background(200, 200, 220);
   selectInput("Choose an image to edit:", "fileSelect");
   
@@ -47,7 +48,9 @@ void setup() {
 }
 
 void draw() {
+  stroke(255);  
   background(200, 200, 220);
+  textSize(13);
   text(mode, 300, 300);
   if(mode.equals("Mode: Draw")){
   penDraw();
@@ -55,6 +58,11 @@ void draw() {
   if(image != null){
     imageMode(CENTER);
     image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
+  }
+  else{
+    sampleImg = loadImage("test.jpeg");
+    imageMode(CENTER);
+    image(sampleImg, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
   }
 }
 
@@ -104,13 +112,18 @@ void keyPressed() {
 }
   
 public void handleSliderEvents(GValueControl slider, GEvent event) {
-  System.out.println("slider event");
+  
+}
+public void handleButtonEvents(GValueControl button, GEvent event) {
+  
 }
 
 
 void fileSelect(File selection) {
   if (selection == null) {
-    System.out.println("No image selected");
+    System.out.println("Sample Image Provided");
+    sampleImg = loadImage("test.jpeg");
+    //text(imageFailMessage, 600, 300);
   } 
   else{
     System.out.println("User selected " + selection.getAbsolutePath());
