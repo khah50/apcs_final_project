@@ -49,20 +49,23 @@ void setup() {
 
 void draw() {
   stroke(255);  
-  background(200, 200, 220);
   textSize(13);
-  text(mode, 300, 300);
-  if(mode.equals("Mode: Draw")){
+  background(200, 200, 220);
   penDraw();
-  }
+  text(mode, 300, 300);
   if(image != null){
     imageMode(CENTER);
     image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
   }
   else{
     sampleImg = loadImage("test.jpeg");
+    image = sampleImg;
     imageMode(CENTER);
-    image(sampleImg, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
+    image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
+  }
+
+  if(mode.equals("Mode: Invert (Right)")){
+    invert();
   }
 }
 
@@ -106,7 +109,9 @@ void keyPressed() {
       mode = "Mode: None";
     }  
     if (keyCode == 32 ){ //resets image
-      mode = "Mode: Clear";
+    background(200, 200, 220);
+      mode = "Mode: Cleared  ";
+    image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
     }
   }
 }
