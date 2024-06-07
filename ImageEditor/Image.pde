@@ -20,3 +20,11 @@ void crop() {
   }
 }
 }
+
+void flip () {
+    image(img, 0, 0);
+    pushMatrix();
+    scale(-1.0, 1.0);
+    image(img, -img.width, 0);
+    popMatrix();
+}
