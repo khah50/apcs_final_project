@@ -50,7 +50,7 @@ Current functionalities:
 
 Planned functionalities:
 -Crop function using built in functions to get part of the image.
--Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...).
+-Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
 -Interface where the user can select which tool to use and the properties for each tool using G4P library.
 -Multiple blur filters (Gaussian, radial, shape blur).
 -Invert image
