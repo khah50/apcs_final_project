@@ -8,7 +8,7 @@ void penDraw() {
 }
 
 void invert() {
-  if(mode.equals("Mode: Invert (right)") && keyPressed == true){
+  if(mode.equals("Mode: Invert (right)") && keyPressed == true && keyCode == RIGHT){
     image(image, 0, 0);
     pushMatrix();
     scale(-1.0, 1.0);

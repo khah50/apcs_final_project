@@ -50,9 +50,14 @@ void setup() {
 void draw() {
   stroke(255);  
   textSize(13);
-  background(200, 200, 220);
+  background(200,200,220);
+    text(mode, 300, 300);
+  fill(0);
+  rect(290,250,150,150);
+  fill(255);
   penDraw();
-  text(mode, 300, 300);
+
+    
   if(image != null){
     imageMode(CENTER);
     image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
@@ -62,11 +67,10 @@ void draw() {
     image = sampleImg;
     imageMode(CENTER);
     image(image, 690, 450, sliderImageX.getValueI(), sliderImageY.getValueI());
-  }
-
-  if(mode.equals("Mode: Invert (Right)")){
-    invert();
-  }
+    if(mode.equals("Mode: Invert (Right)")){
+       invert();
+    }  
+}
 }
 
 void keyPressed() {
