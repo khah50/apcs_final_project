@@ -2,6 +2,8 @@ import g4p_controls.*;
 PImage image;
 String imagePath;
 String mode = "Choose a mode";
+GCustomSlider rotater;
+
 
 GCustomSlider sliderImageX, sliderImageY;
 
@@ -87,7 +89,17 @@ void setup() {
   sliderImageY.setEasing(6.0);
   sliderImageY.setNumberFormat(G4P.INTEGER, 0);
   sliderImageY.setOpaque(false);
-   
+
+      rotater = new GCustomSlider(this, 50, 50, 400, 100, "grey_blue");
+  rotater.setShowValue(true);
+  rotater.setShowLimits(true);
+  rotater.setLimits(38, 0, 100);
+  rotater.setNbrTicks(11);
+  rotater.setShowTicks(true);
+  rotater.setEasing(6.0);
+  rotater.setNumberFormat(G4P.INTEGER, 0);
+  rotater.setOpaque(true);
+  
 
 }
 
@@ -99,4 +111,10 @@ void draw() {
   }
   String mode = this.mode;
   text(mode, 300, 300);
+}
+
+void rotate() {
+   rotate(rotater.getValueI()*TWO_PI/360);
+   image(img, 0, 0);
+
 }
