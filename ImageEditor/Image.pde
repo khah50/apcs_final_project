@@ -97,6 +97,8 @@ text(names[name], width / 2 + 20, 50);
  
 
 void draw() {
+  rectangleBrush(mouseX, mouseY);
+
     drawl();
 
   if(keyPressed) {
@@ -133,4 +135,13 @@ void flip () {
     scale(-1.0, 1.0);
     image(img, -img.width, 0);
     popMatrix();
+}
+
+int drawOpacity = 255;
+
+void rectangleBrush(int x, int y){
+
+
+  rect(x, y, 220, 220, 28);
+  tint(255, drawOpacity);  
 }
