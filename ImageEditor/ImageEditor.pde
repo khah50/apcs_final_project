@@ -114,7 +114,56 @@
     sliderDraw.setOpaque(false);
 
     //GButton btn = new GButton(this, 100, 90, 96, 32, "A button");
-  }
+
+        names = new String[]{
+    "Identity", "Blur", "Sharpen",
+    "Outline", "Left Sobel", "Right Sobel",
+    "Top Sobel", "Emboss"
+  };
+
+  kernels = new Kernel[] {
+    new Kernel( new float[][] {
+      {0, 0, 0},
+      {0, 1, 0},
+      {0, 0, 0}
+    }) ,
+    new Kernel( new float[][] {
+      {0.111, .111, .111},
+      {.111, .111, .111},
+      {.111, .111, .111}
+    }) ,
+    new Kernel( new float[][] {
+      {0, -1, 0},
+      {-1, 5, -1},
+      {0, -1, 0}
+    }) ,
+    new Kernel( new float[][] {
+      {-1, -1, -1},
+      {-1, 8, -1},
+      {-1, -1, -1}
+    }) ,
+    new Kernel( new float[][] {
+      {1, 0, -1},
+      {2, 0, -2},
+      {1, 0, -1}
+    }) ,
+    new Kernel( new float[][] {
+      {-1, 0, 1},
+      {-2, 0, 2},
+      {-1, 0, 1}
+    }) ,
+    new Kernel( new float[][] {
+      {1, 2,  1},
+      {0, 0, 0},
+      {-1, -2, -1}
+    }),
+    new Kernel( new float[][] {
+      {-2, -1,  0},
+      {-1, 1, 1},
+      {0, 1, 2}
+    })
+  };  
+}
   
   void draw() {
     background(200, 200, 220);
@@ -225,6 +274,9 @@
       }
       if (keyCode == 88) { //contrast X
         mode = "Mode: Contrast";
+        kernels[1].apply(img, output);
+        image(img, 0, 0);
+        image(output, img.width, 0);
       }
       if (keyCode == 83) { //saturation S
         mode = "Mode: Saturation";
