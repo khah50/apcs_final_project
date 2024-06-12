@@ -1,6 +1,8 @@
   import g4p_controls.*;
   PImage image;
   PImage sampleImg;
+  PImage img, 
+  output;
   String imagePath;
   String mode = "Choose a mode";
   String imageFailMessage = "No image selected";
@@ -252,6 +254,7 @@
   }
   
   void keyPressed() {
+    img = image;
     if (keyPressed) {
       if (keyCode == 67) { //crop C
         mode = "Mode: Crop";
@@ -274,9 +277,7 @@
       }
       if (keyCode == 88) { //contrast X
         mode = "Mode: Contrast";
-        kernels[1].apply(img, output);
-        image(img, 0, 0);
-        image(output, img.width, 0);
+        kernels[1].apply(img, img);
       }
       if (keyCode == 83) { //saturation S
         mode = "Mode: Saturation";
