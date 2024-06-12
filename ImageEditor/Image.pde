@@ -2,8 +2,9 @@ import g4p_controls.*;
 PImage img;
 
 void penDraw() {
+  stroke(255);
   if(mode.equals("Mode: Draw") && mousePressed){
-  circle(mouseX, mouseY, sliderDraw.getValueI());
+  line(mouseX, mouseY, sliderDraw.getValueI());
   }
 }
 
