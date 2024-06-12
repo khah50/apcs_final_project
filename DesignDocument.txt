@@ -47,8 +47,6 @@ Current functionalities:
 -Draw function with variable color and size.
 -Image filters using kernels.
 -Displays current editing mode
-
-Planned functionalities:
 -Crop function using built in functions to get part of the image.
 -Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
 -Interface where the user can select which tool to use and the properties for each tool using G4P library.
@@ -63,6 +61,16 @@ Sometimes getting a null pointer error. Also, we orignally had issues with libra
 
 6. Log
 Keith:
+-Takes in user inputted images
+-Resize image function with functional sliders.
+-Displays current editing mode
+-Interface where the user can select which tool to use and the properties for each tool using G4P library (both of us worked on it)
 
 Caden:
+-Image filters using kernels.
+-Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
+-Interface where the user can select which tool to use and the properties for each tool using G4P library (both of us worked on it)
+-Multiple blur filters (Gaussian, radial, shape blur).
+-Invert image
+-Rotate image
 
