@@ -10,12 +10,14 @@
   int ogWidth;
   int ogHeight;
   boolean seeCropSliders = false;
+  boolean seeRotate = false;
   Kernel[] kernels;
   
   
   GCustomSlider sliderImageX, sliderImageY;
   GCustomSlider sliderDraw;
   GCustomSlider sliderCropWidth, sliderCropHeight, sliderCropX, sliderCropY;
+  GCustomSlider sliderRotate;
   
   void setup() {
     size(1300, 900);
@@ -90,6 +92,17 @@
     sliderImageY.setNumberFormat(G4P.INTEGER, 0);
     sliderImageY.setOpaque(false);
 
+    sliderRotate = new GCustomSlider(this, 100,500,200,40, "grey_blue");
+    sliderRotate.setShowValue(false);
+    sliderRotate.setShowLimits(false);
+    sliderRotate.setLimits(38, 0, 100);
+    sliderRotate.setNbrTicks(11);
+    sliderRotate.setShowTicks(true);
+    sliderRotate.setEasing(6.0);
+    sliderRotate.setNumberFormat(G4P.INTEGER, 0);
+    sliderRotate.setOpaque(false);
+    sliderRotate.setVisible(false);
+    
     sliderDraw = new GCustomSlider(this, 100, 500, 200, 40, "grey_blue");
     sliderDraw.setShowValue(false);
     sliderDraw.setShowLimits(false);
@@ -111,6 +124,7 @@
   if(!seeCropSliders){
     sliderImageX.setVisible(true);
     sliderImageY.setVisible(true);
+    sliderRotate.setVisible(true);
     sliderDraw.setVisible(true);
     fill(0);
     textSize(12);
@@ -119,9 +133,25 @@
     text("Image Height", 20, 400);
     text("Pen Thickness", 20, 500);    
   }
+  else if(seeRotate){
+    sliderImageX.setVisible(false);
+    sliderImageY.setVisible(false);
+    sliderDraw.setVisible(false);
+    sliderCropX.setVisible(false);
+    sliderCropY.setVisible(false);
+    sliderCropWidth.setVisible(false);
+    sliderCropHeight.setVisible(false);
+    sliderRotate.setVisible(true);
+    seeCropSliders = false;
+    fill(0);
+    textSize(12);
+    textAlign(LEFT, CENTER);
+    text("Rotate", 20, 300);
+  }
    else{
     sliderImageX.setVisible(false);
     sliderImageY.setVisible(false);
+    sliderRotate.setVisible(false);
     sliderDraw.setVisible(false);
     fill(0);
     textSize(12);
@@ -162,13 +192,17 @@
       sliderCropWidth.setVisible(true);
       sliderCropHeight.setVisible(true);
     }
+    
+      if (mode.equals("Mode: Rotate")) {
+      mode = "Mode: Rotating...";
+      seeRotate = true;
+      sliderRotate.setVisible(true);
+      
+    }
      image(pg, 655, 450);
   }
   
   void keyPressed() {
-    String[] names = new String[]{
-      "Crop", "Contrast", "Saturation", "Blur", "Rotate", "Invert", "Draw"
-    };
     if (keyPressed) {
       if (keyCode == 67) { //crop C
         mode = "Mode: Crop";
@@ -203,6 +237,16 @@
       }
       if (keyCode == 82) { //rotate R
         mode = "Mode: Rotate";
+        rotate(image);
+        seeRotate = true;
+        sliderRotate.setVisible(true);
+        sliderCropX.setVisible(false);
+        sliderCropY.setVisible(false);
+        sliderCropWidth.setVisible(false);
+        sliderCropHeight.setVisible(false);
+        sliderImageX.setVisible(false);
+        sliderImageY.setVisible(false);
+        sliderDraw.setVisible(false);
       }
       if (keyCode == UP) { //invert
        mode = "Mode: Vertical Invert";
@@ -236,10 +280,12 @@
         pg.endDraw();
         image = ogImage.copy();
         seeCropSliders = false; 
+        seeRotate = false;
         sliderCropX.setVisible(false);
         sliderCropY.setVisible(false);
         sliderCropWidth.setVisible(false);
         sliderCropHeight.setVisible(false);
+        sliderRotate.setVisible(false);
 
         sliderImageX.setValue(ogWidth);
         sliderImageY.setValue(ogHeight);

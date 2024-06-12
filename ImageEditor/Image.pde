@@ -1,11 +1,15 @@
 import g4p_controls.*;
-PImage img;
 int cropX, cropY, cropWidth, cropHeight;
 
 void penDraw() {
   if(mode.equals("Mode: Draw") && mousePressed){
       pg.line(mouseX, mouseY, pmouseX, pmouseY);
   }
+}
+
+void rotate(PImage img) {
+   rotate(sliderRotate.getValueI()*TWO_PI/360);
+   img.
 }
 
 void invertLeft(PImage image){
@@ -73,16 +77,6 @@ void crop() {
 
     if (x >= 0 && y >= 0 && x + width <= image.width && y + height <= image.height) {
       image = image.get(x, y, width, height);
-
-      sliderCropX.setValue(0);
-      sliderCropY.setValue(0);
-      sliderCropWidth.setValue(image.width);
-      sliderCropHeight.setValue(image.height);
-      seeCropSliders = false;
-      sliderCropX.setVisible(false);
-      sliderCropY.setVisible(false);
-      sliderCropWidth.setVisible(false);
-      sliderCropHeight.setVisible(false);
     }
   }
 }
