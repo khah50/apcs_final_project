@@ -4,73 +4,77 @@ Group members: Keith Hah, Caden Khuu
 Group name: The Photo Shoppers
 Project title: Pixedit
 
+
 2. Description
 General description:
-We are planning on creating a photoshop function
-where you can modify an image by cropping it, changing its
-saturation and contrast, sharpening it, blurring it, drawing 
-on it, rotating it, inverting it, and increasing or decreasing its size. We will also
-be implementing multiple filters using kernel images.
+We are planning on creating a photoshop function where you can modify an image by cropping it, blurring it, drawing on it, rotating it, inverting it, and increasing or decreasing its size. We will also be implementing multiple filters using kernel images. This editor takes in user inputted images (or, if none are selected, it provides you with a sample image) and is able to modify those images in a variety of ways.
 
 Functionalities:
 -Crop: cuts off certain parts of an image, depending on what your input values are. The image will be smaller.
--Contrast: changes the sharpness of image
--Saturation: changes the intensity of the image's color
 -Blur: blurs the image, which decreases its overall quality
 -Draw: use your mouse to draw on the image (different colors/thickness)
 -Rotate: rotates the image (ideally by intervals of 90 degrees)
 -Sizing: Makes picture bigger or smaller (just change the size of the image).
 -Invert: Flips images
+-Kernel filters: similar to lab; changes contrast and saturation, sharpness, things like that
 
 Libraries:
-Some kind of GUI library (G4P?) so the user can input the name of their image.
+Some kind of GUI library (G4P?) so the user can input the filepath of their image.
 (http://www.lagers.org.uk/g4p/). We also need this to properly edit the image using things like sliders.
 
 Additional:
 -Add texts to show user what editing mode they're using
 -Get user inputted image
--(Maybe not necesasry) Provide sample images if user doesn't want to use their own images.
+-(Maybe not necessary) Provide sample images if the user doesn't want to use their own images.
+-Use of PGraphics to properly edit the image without affecting its functionality
+
 
 3. UML Diagram
 https://drive.google.com/file/d/1NNk9OP7XZ-vjJQb10fRLtz8hoqdzdSVM/view?usp=sharing
 
+
 4. How it works
 In order to use our project, the user has to use the mouse and keyboard to
-change certain aspects of the image (ex: pressing R rotates the image, clicking the mouse to draw).
-They may also run the code with differnet parameters to change certain aspects of the image (such as its size).
+change certain aspects of the image (ex: pressing R rotates the image, holding down the mouse to draw). They can also use the sliders to change certain properties of the image.
+
 
 5. Functionalities/Issues
-
 Current functionalities:
+-Kernel filters
 -Takes in user inputted images
 -Resize image function with functional sliders.
 -Draw function with variable color and size.
--Image filters using kernels.
 -Displays current editing mode
 -Crop function using built in functions to get part of the image.
 -Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
--Interface where the user can select which tool to use and the properties for each tool using G4P library.
+-Interface where the user can select which tool to use and the properties for each tool using the G4P library.
 -Multiple blur filters (Gaussian, radial, shape blur).
 -Invert image
 -Rotate image
 
 Issues:
-Sometimes getting a null pointer error. Also, we orignally had issues with libraries as we are using G4P, where we were unable to take values from a slider input. However, after looking over the documentation and the built in functions, we were able to figure it out. We are now using multiple G4P tools in order to adjust the usage of our editing tools.
+Sometimes getting a null pointer error. Also, we originally had issues with libraries as we are using G4P, where we were unable to take values from a slider input. However, after looking over the documentation and the built in functions, we were able to figure it out. We are now using multiple G4P tools in order to adjust the usage of our editing tools.
+Another issue was having problems with different layers of images, where the draw wouldn’t stay on the canvas, or it would go behind the actual image. This was due to continuous calls to background(), which erased the drawing as it was being drawn. At first I tried moving the background call to a setup() only, but then I realized the text would start overlapping. This led me to start researching PGraphics to solve this issue, and luckily it worked (it creates an additional “layer” to the screen). Also some organization issues because some code was stored in the incorrect files, so I tried separating the setup, draw, keyPress methods and the actual editing functions into two different files. 
 
-//FINAL VERSION - NOT YET
 
 6. Log
 Keith:
--Takes in user inputted images
--Resize image function with functional sliders.
--Displays current editing mode
--Interface where the user can select which tool to use and the properties for each tool using G4P library (both of us worked on it)
+- Made + edited design docs and UML diagrams
+- Coded setup() and draw() 
+- Found a way to take user inputs for images (using my fileSelect method). Also made sure to provide sample image to user
+- Researched G4P library in order to utilize sliders for code. I was able to use these sliders to resize the image
+- Coded keybinds for the different editing modes using keyCode, as well as their corresponding texts (it tells you the current mode you’re on)
+- Coded penDraw() and fixed the draw functionality after researching PGraphics
+- Coded crop()
+- Coded clear and reset functionalities (clear erases all drawings, reset resets everything)
+- Coded invert()
+- Organized the code and moved everything to the correct file. This includes removing unnecessary variables + methods, moving functionality methods to the Image.pde file (where they’re supposed to be), and fixing these methods so that they work after being moved.
+- A whole lot of troubleshooting and debugging 
 
 Caden:
--Image filters using kernels.
--Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
--Interface where the user can select which tool to use and the properties for each tool using G4P library (both of us worked on it)
--Multiple blur filters (Gaussian, radial, shape blur).
--Invert image
--Rotate image
-
+- Image filters using kernels
+- Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
+- Multiple blur filters (Gaussian, radial, shape blur).
+- Rotate image
+- Researched G4P library
+- Created slider for penDraw() thickness
