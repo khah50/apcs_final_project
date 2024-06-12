@@ -1,36 +1,88 @@
 import g4p_controls.*;
 PImage img;
+int cropX, cropY, cropWidth, cropHeight;
 
 void penDraw() {
-  stroke(255);
   if(mode.equals("Mode: Draw") && mousePressed){
-  line(mouseX, mouseY, sliderDraw.getValueI());
+      pg.line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
 
-void invert() {
-  if(mode.equals("Mode: Invert (right)") && keyPressed == true && keyCode == RIGHT){
-    image(image, 0, 0);
-    pushMatrix();
-    scale(-1.0, 1.0);
-    image(image, -image.width, 0);
-    popMatrix();
+void invertLeft(PImage image){
+  image.loadPixels();
+  for (int y = 0; y < image.height; y++) {
+    for (int x = 0; x < image.width / 2; x++) {
+      int pixelOne = x + y * image.width;
+      int pixelTwo = (image.width - x - 1) + y * image.width;
+      int invertedColor = image.pixels[pixelOne];
+      image.pixels[pixelOne] = image.pixels[pixelTwo];
+      image.pixels[pixelTwo] = invertedColor;
+    }
   }
+  image.updatePixels();
+}
+
+void invertRight(PImage image){
+  image.loadPixels();
+  for (int y = 0; y < image.height; y++) {
+    for (int x = 0; x < image.width / 2; x++) {
+      int pixelOne = x + y * image.width;
+      int pixelTwo = (image.width - x - 1) + y * image.width;
+      int invertedColor = image.pixels[pixelOne];
+      image.pixels[pixelOne] = image.pixels[pixelTwo];
+      image.pixels[pixelTwo] = invertedColor;
+    }
+  }
+  image.updatePixels();
+}
+
+void invertUp(PImage image){
+  image.loadPixels();
+  for (int y = 0; y < image.height / 2; y++) {
+    for (int x = 0; x < image.width; x++) {
+      int pixelOne = x + y * image.width;
+      int pixelTwo = x + (image.height - y - 1) * image.width;
+      int invertedColor = image.pixels[pixelOne];
+      image.pixels[pixelOne] = image.pixels[pixelTwo];
+      image.pixels[pixelTwo] = invertedColor;
+    }
+  }
+  image.updatePixels();
+}
+
+void invertDown(PImage image){
+  image.loadPixels();
+  for (int y = 0; y < image.height / 2; y++) {
+    for (int x = 0; x < image.width; x++) {
+      int pixelOne = x + y * image.width;
+      int pixelTwo = x + (image.height - y - 1) * image.width;
+      int invertedColor = image.pixels[pixelOne];
+      image.pixels[pixelOne] = image.pixels[pixelTwo];
+      image.pixels[pixelTwo] = invertedColor;
+    }
+  }
+  image.updatePixels();
 }
 
 void crop() {
-  if(image != null){
-  if(mousePressed) {
-    PImage crop = img.get(0,0,500,500);
-    image(crop, 0, 0);
-  }
-}
-}
+  if (image != null) {
+    int x = sliderCropX.getValueI();
+    int y = sliderCropY.getValueI();
+    int width = sliderCropWidth.getValueI();
+    int height = sliderCropHeight.getValueI();
 
-void flip () {
-    image(img, 0, 0);
-    pushMatrix();
-    scale(-1.0, 1.0);
-    image(img, -img.width, 0);
-    popMatrix();
+    if (x >= 0 && y >= 0 && x + width <= image.width && y + height <= image.height) {
+      image = image.get(x, y, width, height);
+
+      sliderCropX.setValue(0);
+      sliderCropY.setValue(0);
+      sliderCropWidth.setValue(image.width);
+      sliderCropHeight.setValue(image.height);
+      seeCropSliders = false;
+      sliderCropX.setVisible(false);
+      sliderCropY.setVisible(false);
+      sliderCropWidth.setVisible(false);
+      sliderCropHeight.setVisible(false);
+    }
+  }
 }
