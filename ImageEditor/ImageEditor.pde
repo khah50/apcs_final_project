@@ -240,6 +240,9 @@
       }
       if (keyCode == 88) { //contrast X
         mode = "Mode: Contrast";
+        kernels[1].apply(img, output);
+        image(img, 0, 0);
+        image(output, img.width, 0);
       }
       if (keyCode == 83) { //saturation S
         mode = "Mode: Saturation";
