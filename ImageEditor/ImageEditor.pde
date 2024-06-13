@@ -331,6 +331,9 @@
             if (keyCode == 77) {
         mode = "Mode: Draw Marker";
             }
+            if (keyCode == 85) {
+              save("export.png");
+            }
       if (keyCode == BACKSPACE) { //clears drawing only
         mode = "Mode: Cleared";
         background(200, 200, 220);
