@@ -7,10 +7,6 @@ void penDraw() {
   }
 }
 
-void rotate(PImage img) {
-   rotate(sliderRotate.getValueI()*TWO_PI/360);
-   img.
-}
 
 void invertLeft(PImage image){
   image.loadPixels();
@@ -66,6 +62,19 @@ void invertDown(PImage image){
     }
   }
   image.updatePixels();
+}
+
+  PImage rotateImg(PImage img, float angle) {
+  angle += 72;
+  PGraphics pg = createGraphics(img.width, img.height);
+  pg.beginDraw();
+  pg.background(200,200,220);
+  pg.translate(pg.width/2, pg.height/2);
+  pg.rotate(radians(angle));
+  pg.imageMode(CENTER);
+  pg.image(img, 0, 0);
+  pg.endDraw();
+  return pg.get();
 }
 
 void crop() {
