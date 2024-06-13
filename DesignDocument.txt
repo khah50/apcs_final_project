@@ -73,8 +73,7 @@ Keith:
 
 Caden:
 - Image filters using kernels
-- Custom brushes for drawing (e.g. marker, paintbrush, square, oval, etc...)
-- Multiple blur filters (Gaussian, radial, shape blur).
+- Custom brush for drawing (marker)
 - Rotate image
 - Researched G4P library
 - Created slider for penDraw() thickness

@@ -7,9 +7,10 @@ void penDraw() {
   }
 }
 
-void rotate(PImage img) {
-   rotate(sliderRotate.getValueI()*TWO_PI/360);
-   img.
+void rotateImg(PImage img) {
+   pg.translate(width / 2, height / 2);
+   pg.rotate(sliderRotate.getValueI()*TWO_PI/360);
+   pg.translate(-width / 2, -height / 2);
 }
 
 void invertLeft(PImage image){
