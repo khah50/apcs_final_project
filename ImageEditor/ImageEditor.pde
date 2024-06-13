@@ -235,6 +235,17 @@
       }
     }
     
+    if (mode.equals("Mode: Draw Marker")) {
+          if (mousePressed) {
+        pg.beginDraw();
+        pg.stroke(0);
+        pg.strokeWeight(sliderDraw.getValueI());
+        pg.rect(pmouseX, pmouseY, 5, 5);
+        pg.endDraw();
+      }
+      
+    }
+    
     if (mode.equals("Mode: Crop")) {
       mode = "Mode: Cropping...";
       seeCropSliders = true;
@@ -290,7 +301,6 @@
       }
       if (keyCode == 82) { //rotate R
         mode = "Mode: Rotate";
-        rotate(image);
         seeRotate = true;
         sliderRotate.setVisible(true);
         sliderCropX.setVisible(false);
@@ -317,6 +327,10 @@
         mode = "Mode: Horizontal Invert";
         invertRight(image);
       }
+      
+            if (keyCode == 77) {
+        mode = "Mode: Draw Marker";
+            }
       if (keyCode == BACKSPACE) { //clears drawing only
         mode = "Mode: Cleared";
         background(200, 200, 220);
