@@ -245,7 +245,7 @@
       seeRotate = false;
       showCropSliders(true);
       showRotateSlider(false);
-    } //<>//
+    }
      image(pg, 655, 450);
   }
 
