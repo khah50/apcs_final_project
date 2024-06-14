@@ -68,12 +68,12 @@ Keith:
 - Coded crop()
 - Coded clear and reset functionalities (clear erases all drawings, reset resets everything)
 - Coded invert()
+- Coded rotateImg()
 - Organized the code and moved everything to the correct file. This includes removing unnecessary variables + methods, moving functionality methods to the Image.pde file (where they’re supposed to be), and fixing these methods so that they work after being moved.
-- A whole lot of troubleshooting and debugging 
+-
 
 Caden:
 - Image filters using kernels
 - Custom brush for drawing (marker)
-- Rotate image
 - Researched G4P library
 - Created slider for penDraw() thickness
