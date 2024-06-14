@@ -69,8 +69,7 @@ Keith:
 - Coded clear and reset functionalities (clear erases all drawings, reset resets everything)
 - Coded invert()
 - Coded rotateImg()
-- Organized the code and moved everything to the correct file. This includes removing unnecessary variables + methods, moving functionality methods to the Image.pde file (where they’re supposed to be), and fixing these methods so that they work after being moved.
--
+- Organized + fixed the code and moved everything to the correct file. This includes removing unnecessary variables + methods, moving functionality methods to the Image.pde file (where they’re supposed to be), and fixing these methods so that they work after being moved.
 
 Caden:
 - Image filters using kernels
